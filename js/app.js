@@ -72,10 +72,13 @@ function game() {
 
   function showGameScore() {
     if (playerScore > computerScore) {
+      currentWinner = 'player';
       console.log(`You are leading ${playerScore}-${computerScore}!`);
     } else if (computerScore > playerScore) {
+      currentWinner = 'computer';
       console.log(`You are losing ${playerScore}-${computerScore}.`);
     } else {
+      currentWinner = null;
       console.log(`You're both tied at ${playerScore}!`);
     }
   }
