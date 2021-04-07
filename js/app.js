@@ -67,6 +67,16 @@ function showResults() {
   }
 }
 
+function showGameScore() {
+  if (playerScore > computerScore) {
+    console.log(`You are leading ${playerScore}-${computerScore}!`);
+  } else if (computerScore > playerScore) {
+    console.log(`You are losing ${playerScore}-${computerScore}.`);
+  } else {
+    console.log(`You're both tied at ${playerScore}!`);
+  }
+}
+
 function playRound() {
   createComputerPlay();
   getPlayerSelection();
