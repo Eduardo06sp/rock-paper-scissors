@@ -72,4 +72,5 @@ function playRound() {
   getPlayerSelection();
   getRoundWinner();
   updateScore();
+  showResults();
 }
