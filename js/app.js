@@ -1,5 +1,7 @@
 const choices = ['rock', 'paper', 'scissors'];
 
+let computerSelection = '';
+
 function createRandomNum(max) {
   return Math.floor(Math.random() * max);
 }
