@@ -7,7 +7,7 @@ function createRandomNum(max) {
   return Math.floor(Math.random() * max);
 }
 
-function createComputerPlay() {
+function createComputerPlay(computerSelection) {
   computerSelection = choices[createRandomNum(3)];
 }
 
@@ -23,5 +23,5 @@ function getPlayerSelection() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  createComputerPlay();
+  createComputerPlay(computerSelection);
 }
