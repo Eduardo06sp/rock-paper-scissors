@@ -50,4 +50,5 @@ function getRoundWinner() {
 function playRound() {
   createComputerPlay();
   getPlayerSelection();
+  getRoundWinner();
 }
