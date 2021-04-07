@@ -6,6 +6,8 @@ let computerScore = 0;
 let playerScore = 0;
 let winner = null;
 
+let currentRound = 0;
+
 function createRandomNum(max) {
   return Math.floor(Math.random() * max);
 }
@@ -84,4 +86,6 @@ function playRound() {
   updateScore();
   showResults();
   showGameScore();
+
+  currentRound++;
 }
