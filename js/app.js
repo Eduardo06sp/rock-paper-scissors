@@ -7,7 +7,8 @@ function game() {
   let playerScore = 0;
   let winner = null;
 
-  let currentRound = 0;
+  let currentRound = 1;
+
 
   function createRandomNum(max) {
     return Math.floor(Math.random() * max);
