@@ -2,6 +2,8 @@ const choices = ['rock', 'paper', 'scissors'];
 
 let computerSelection = '';
 let playerSelection = '';
+let computerScore = 0;
+let playerScore = 0;
 let winner = null;
 
 function createRandomNum(max) {
