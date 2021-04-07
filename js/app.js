@@ -1,5 +1,5 @@
 const choices = ['rock', 'paper', 'scissors'];
 
-createRandomNum(max) {
+function createRandomNum(max) {
   return Math.floor(Math.random * max);
 }
