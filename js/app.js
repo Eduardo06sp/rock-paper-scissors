@@ -22,6 +22,30 @@ function getPlayerSelection() {
   }
 }
 
+function getRoundWinner() {
+  if (
+    playerSelection === 'rock' &&
+    computerSelection === 'scissors'
+  ) {
+    winner = 'player';
+  } else if (
+    playerSelection === 'paper' &&
+    computerSelection === 'rock'
+  ) {
+    winner = 'player';
+  } else if (
+    playerSelection === 'scissors' &&
+    computerSelection === 'paper'
+  ) {
+    winner = 'player';
+  } else if (
+    playerSelection === computerSelection) {
+    winner = null;
+  } else {
+    winner = 'computer';
+  }
+}
+
 function playRound() {
   createComputerPlay();
   getPlayerSelection();
