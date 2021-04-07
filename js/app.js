@@ -105,4 +105,9 @@ function game() {
       isGameOver = false;
     }
   }
+
+  while (!(isGameOver)) {
+    playRound();
+    checkGameOver();
+  }
 }
