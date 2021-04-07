@@ -11,6 +11,7 @@ function game() {
   let currentRound = 1;
   let totalRounds = 5;
   let isGameOver = false;
+  let isPlayerReady = false;
 
   function createRandomNum(max) {
     return Math.floor(Math.random() * max);
