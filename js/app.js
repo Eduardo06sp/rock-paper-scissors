@@ -6,6 +6,7 @@ function game() {
   let computerScore = 0;
   let playerScore = 0;
   let winner = null;
+  let currentWinner = null;
 
   let currentRound = 1;
   let totalRounds = 5;
