@@ -22,6 +22,6 @@ function getPlayerSelection() {
   }
 }
 
-function playRound() {
+function playRound(playerSelection, computerSelection) {
   createComputerPlay();
 }
