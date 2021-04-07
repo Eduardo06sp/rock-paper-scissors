@@ -57,6 +57,16 @@ function updateScore() {
   }
 }
 
+function showResults() {
+  if (winner === 'player') {
+    console.log('You won!');
+  } else if (winner === 'computer') {
+    console.log('You lost.');
+  } else {
+    console.log('Tied!');
+  }
+}
+
 function playRound() {
   createComputerPlay();
   getPlayerSelection();
