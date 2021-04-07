@@ -97,4 +97,12 @@ function game() {
 
     currentRound++;
   }
+
+  function checkGameOver() {
+    if (currentRound > totalRounds) {
+      isGameOver = true;
+    } else {
+      isGameOver = false;
+    }
+  }
 }
