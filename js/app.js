@@ -61,4 +61,5 @@ function playRound() {
   createComputerPlay();
   getPlayerSelection();
   getRoundWinner();
+  updateScore();
 }
