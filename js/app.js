@@ -106,8 +106,29 @@ function game() {
     }
   }
 
+  function endGame() {
+    console.log('Game over!');
+
+    if (currentWinner === 'player') {
+      console.log('Congratulations! You win the match!');
+    } else if (currentWinner === 'computer') {
+      console.log('Better luck next time! You lost this match.');
+    } else {
+      console.log('It\'s a tie!');
+    }
+
+    let userInput = prompt('Would you like to play again?');
+    if (userInput) {
+      game();
+    } else {
+      console.log('Have a wonderful day!');
+    }
+  }
+
   while (!(isGameOver)) {
     playRound();
     checkGameOver();
   }
+
+  endGame();
 }
