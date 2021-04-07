@@ -83,4 +83,5 @@ function playRound() {
   getRoundWinner();
   updateScore();
   showResults();
+  showGameScore();
 }
