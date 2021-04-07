@@ -7,5 +7,5 @@ function createRandomNum(max) {
 }
 
 function createComputerPlay() {
-  computerSelection = possibilities[createRandomNum(3)];
+  computerSelection = choices[createRandomNum(3)];
 }
