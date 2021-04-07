@@ -10,3 +10,7 @@ function createRandomNum(max) {
 function createComputerPlay() {
   computerSelection = choices[createRandomNum(3)];
 }
+
+function playRound() {
+  createComputerPlay();
+}
