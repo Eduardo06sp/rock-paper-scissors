@@ -47,6 +47,14 @@ function getRoundWinner() {
   }
 }
 
+function updateScore() {
+  if (winner === 'player') {
+    playerScore++;
+  } else if (winner === 'computer') {
+    computerScore++;
+  }
+}
+
 function playRound() {
   createComputerPlay();
   getPlayerSelection();
