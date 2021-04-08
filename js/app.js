@@ -86,9 +86,7 @@ function game() {
     }
   }
 
-  function playRound() {
-    createComputerPlay();
-    getPlayerSelection();
+  function playRound(playerSelection, computerSelection) {
     getRoundWinner();
     updateScore();
     showResults();
@@ -125,7 +123,9 @@ function game() {
   }
 
   while (!(isGameOver)) {
-    playRound();
+    createComputerPlay();
+    getPlayerSelection();
+    playRound(playerSelection, computerSelection);
     checkGameOver();
   }
 
