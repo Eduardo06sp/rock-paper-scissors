@@ -114,11 +114,16 @@ function game() {
       console.log('It\'s a tie!');
     }
 
-    let userInput = prompt('Would you like to play again?');
-    if (userInput) {
-      game();
-    } else {
-      console.log('Have a wonderful day!');
+    let userInput;
+    while (!(userInput === 'yes' || userInput === 'no')) {
+      userInput = prompt(
+        'Would you like to play again? Please type in "yes" or "no"').toLowerCase();
+
+      if (userInput === 'yes') {
+        game();
+      } else if (userInput === 'no') {
+        console.log('Have a wonderful day!');
+      }
     }
   }
 
