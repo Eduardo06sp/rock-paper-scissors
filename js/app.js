@@ -131,3 +131,5 @@ function game() {
 
   endGame();
 }
+
+game();
