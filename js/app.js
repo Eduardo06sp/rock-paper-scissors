@@ -12,117 +12,6 @@ function game() {
   let totalRounds = 5;
   let isGameOver = false;
 
-  function createComputerPlay() {
-    randomNum = Math.floor(Math.random() * 3);
-    computerSelection = choices[randomNum];
-  }
-
-  function getPlayerSelection() {
-    playerSelection = '';
-
-    do {
-      playerSelection = prompt('Choose rock, paper or scissors!').toLowerCase();
-    } while (!(playerSelection === 'rock' ||
-          playerSelection === 'paper' ||
-          playerSelection === 'scissors'))
-  }
-
-  function getRoundWinner() {
-    if (
-      playerSelection === 'rock' &&
-      computerSelection === 'scissors'
-    ) {
-      winner = 'player';
-    } else if (
-      playerSelection === 'paper' &&
-      computerSelection === 'rock'
-    ) {
-      winner = 'player';
-    } else if (
-      playerSelection === 'scissors' &&
-      computerSelection === 'paper'
-    ) {
-      winner = 'player';
-    } else if (
-      playerSelection === computerSelection) {
-      winner = null;
-    } else {
-      winner = 'computer';
-    }
-  }
-
-  function updateScore() {
-    if (winner === 'player') {
-      playerScore++;
-    } else if (winner === 'computer') {
-      computerScore++;
-    }
-  }
-
-  function showResults() {
-    if (winner === 'player') {
-      console.log('You won!');
-    } else if (winner === 'computer') {
-      console.log('You lost.');
-    } else {
-      console.log('Tied!');
-    }
-  }
-
-  function showGameScore() {
-    if (playerScore > computerScore) {
-      currentWinner = 'player';
-      console.log(`You are leading ${playerScore}-${computerScore}!`);
-    } else if (computerScore > playerScore) {
-      currentWinner = 'computer';
-      console.log(`You are losing ${playerScore}-${computerScore}.`);
-    } else {
-      currentWinner = null;
-      console.log(`You're both tied at ${playerScore}!`);
-    }
-  }
-
-  function playRound(playerSelection, computerSelection) {
-    getRoundWinner();
-    updateScore();
-    showResults();
-    showGameScore();
-
-    currentRound++;
-  }
-
-  function checkGameOver() {
-    if (currentRound > totalRounds) {
-      isGameOver = true;
-    } else {
-      isGameOver = false;
-    }
-  }
-
-  function endGame() {
-    console.log('Game over!');
-
-    if (currentWinner === 'player') {
-      console.log('Congratulations! You win the match!');
-    } else if (currentWinner === 'computer') {
-      console.log('Better luck next time! You lost this match.');
-    } else {
-      console.log('It\'s a tie!');
-    }
-
-    let userInput;
-    while (!(userInput === 'yes' || userInput === 'no')) {
-      userInput = prompt(
-        'Would you like to play again? Please type in "yes" or "no"').toLowerCase();
-
-      if (userInput === 'yes') {
-        game();
-      } else if (userInput === 'no') {
-        console.log('Have a wonderful day!');
-      }
-    }
-  }
-
   while (!(isGameOver)) {
     createComputerPlay();
     getPlayerSelection();
@@ -134,3 +23,114 @@ function game() {
 }
 
 game();
+
+function createComputerPlay() {
+  randomNum = Math.floor(Math.random() * 3);
+  computerSelection = choices[randomNum];
+}
+
+function getPlayerSelection() {
+  playerSelection = '';
+
+  do {
+    playerSelection = prompt('Choose rock, paper or scissors!').toLowerCase();
+  } while (!(playerSelection === 'rock' ||
+    playerSelection === 'paper' ||
+    playerSelection === 'scissors'))
+}
+
+function getRoundWinner() {
+  if (
+    playerSelection === 'rock' &&
+    computerSelection === 'scissors'
+  ) {
+    winner = 'player';
+  } else if (
+    playerSelection === 'paper' &&
+    computerSelection === 'rock'
+  ) {
+    winner = 'player';
+  } else if (
+    playerSelection === 'scissors' &&
+    computerSelection === 'paper'
+  ) {
+    winner = 'player';
+  } else if (
+    playerSelection === computerSelection) {
+    winner = null;
+  } else {
+    winner = 'computer';
+  }
+}
+
+function updateScore() {
+  if (winner === 'player') {
+    playerScore++;
+  } else if (winner === 'computer') {
+    computerScore++;
+  }
+}
+
+function showResults() {
+  if (winner === 'player') {
+    console.log('You won!');
+  } else if (winner === 'computer') {
+    console.log('You lost.');
+  } else {
+    console.log('Tied!');
+  }
+}
+
+function showGameScore() {
+  if (playerScore > computerScore) {
+    currentWinner = 'player';
+    console.log(`You are leading ${playerScore}-${computerScore}!`);
+  } else if (computerScore > playerScore) {
+    currentWinner = 'computer';
+    console.log(`You are losing ${playerScore}-${computerScore}.`);
+  } else {
+    currentWinner = null;
+    console.log(`You're both tied at ${playerScore}!`);
+  }
+}
+
+function playRound(playerSelection, computerSelection) {
+  getRoundWinner();
+  updateScore();
+  showResults();
+  showGameScore();
+
+  currentRound++;
+}
+
+function checkGameOver() {
+  if (currentRound > totalRounds) {
+    isGameOver = true;
+  } else {
+    isGameOver = false;
+  }
+}
+
+function endGame() {
+  console.log('Game over!');
+
+  if (currentWinner === 'player') {
+    console.log('Congratulations! You win the match!');
+  } else if (currentWinner === 'computer') {
+    console.log('Better luck next time! You lost this match.');
+  } else {
+    console.log('It\'s a tie!');
+  }
+
+  let userInput;
+  while (!(userInput === 'yes' || userInput === 'no')) {
+    userInput = prompt(
+      'Would you like to play again? Please type in "yes" or "no"').toLowerCase();
+
+    if (userInput === 'yes') {
+      game();
+    } else if (userInput === 'no') {
+      console.log('Have a wonderful day!');
+    }
+  }
+}
