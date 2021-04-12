@@ -119,14 +119,15 @@ function checkGameOver(currentRound, totalRounds) {
 }
 
 function endGame(currentWinner) {
+  let outcome = document.querySelector('.outcome');
   console.log('Game over!');
 
   if (currentWinner === 'player') {
-    console.log('Congratulations! You win the match!');
+    outcome.textContent = 'Congratulations! You win the match!';
   } else if (currentWinner === 'computer') {
-    console.log('Better luck next time! You lost this match.');
+    outcome.textContent = 'Better luck next time! You lost this match.';
   } else {
-    console.log('It\'s a tie!');
+    outcome.textContent = 'It\'s a tie!';
   }
 
   let userInput;
