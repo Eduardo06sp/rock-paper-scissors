@@ -54,12 +54,10 @@ function game() {
   }
 
   function replay(e) {
-    console.log(e.target.textContent);
     let userInput = e.target.textContent.toLowerCase();
 
     if (userInput === 'yes') {
     } else if (userInput === 'no') {
-      console.log('Have a wonderful day!');
     }
   }
 }
@@ -139,8 +137,6 @@ function checkGameOver(currentRound, totalRounds) {
 
 function endGame(currentWinner) {
   let outcome = document.querySelector('.outcome');
-
-  console.log('Game over!');
 
   if (currentWinner === 'player') {
     outcome.textContent = 'Congratulations! You win the match!';
