@@ -31,7 +31,7 @@ function game() {
       computerScore++;
     }
 
-    showGameScore(computerScore, playerScore);
+    updateGameScore(computerScore, playerScore);
 
     currentRound++;
     isGameOver = checkGameOver(currentRound, totalRounds);
@@ -89,17 +89,12 @@ function showResults(winner) {
   }
 }
 
-function showGameScore(computerScore, playerScore) {
-  if (playerScore > computerScore) {
-    currentWinner = 'player';
-    console.log(`You are leading ${playerScore}-${computerScore}!`);
-  } else if (computerScore > playerScore) {
-    currentWinner = 'computer';
-    console.log(`You are losing ${playerScore}-${computerScore}.`);
-  } else {
-    currentWinner = null;
-    console.log(`You're both tied at ${playerScore}!`);
-  }
+function updateGameScore(computerScore, playerScore) {
+  let computerScoreEl = document.querySelector('.computer-score-number');
+  let playerScoreEl = document.querySelector('.player-score-number');
+
+  computerScoreEl.textContent = computerScore;
+  playerScoreEl.textContent = playerScore;
 }
 
 function checkGameOver(currentRound, totalRounds) {
