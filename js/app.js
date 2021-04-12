@@ -33,6 +33,7 @@ function game() {
     }
 
     updateGameScore(computerScore, playerScore);
+    currentWinner = checkCurrentWinner(computerScore, playerScore);
 
     currentRound++;
     roundNumber.textContent = currentRound;
@@ -97,6 +98,16 @@ function updateGameScore(computerScore, playerScore) {
 
   computerScoreEl.textContent = computerScore;
   playerScoreEl.textContent = playerScore;
+}
+
+function checkCurrentWinner(computerScore, playerScore) {
+  if (computerScore > playerScore) {
+    return 'computer';
+  } else if (playerScore > computerScore) {
+    return 'player';
+  } else {
+    return null;
+  }
 }
 
 function checkGameOver(currentRound, totalRounds) {
