@@ -21,7 +21,7 @@ function game() {
     showGameScore(computerScore, playerScore);
 
     currentRound++;
-    checkGameOver(currentRound, totalRounds);
+    isGameOver = checkGameOver(currentRound, totalRounds);
   }
 
   endGame();
@@ -106,9 +106,9 @@ function playRound(playerSelection, computerSelection) {
 
 function checkGameOver(currentRound, totalRounds) {
   if (currentRound > totalRounds) {
-    isGameOver = true;
+    return true;
   } else {
-    isGameOver = false;
+    return false;
   }
 }
 
