@@ -42,10 +42,11 @@ function game() {
     isGameOver = checkGameOver(currentRound, totalRounds);
 
     if (isGameOver) {
-      currentRound = 1;
-
       endGame(currentWinner);
 
+      computerScore = 0;
+      playerScore = 0;
+      currentRound = 1;
       roundNumber.textContent = 1;
       updateGameScore(0, 0);
       document.querySelector('.round-results p').textContent = 'Awaiting next play...';
@@ -57,7 +58,6 @@ function game() {
     let userInput = e.target.textContent.toLowerCase();
 
     if (userInput === 'yes') {
-      game();
     } else if (userInput === 'no') {
       console.log('Have a wonderful day!');
     }
