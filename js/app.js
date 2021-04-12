@@ -35,16 +35,11 @@ function game() {
 
     currentRound++;
     isGameOver = checkGameOver(currentRound, totalRounds);
+
+    if (isGameOver) {
+      endGame();
+    }
   }
-
-  while (false) {
-    createComputerPlay(choices);
-    getPlayerSelection();
-
-    playRound(playerSelection, computerSelection);
-  }
-
-  endGame();
 }
 
 game();
