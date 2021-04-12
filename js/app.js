@@ -1,22 +1,24 @@
 function game() {
   const choiceButtons = document.querySelectorAll('.game-choice');
+  const replayChoices = document.querySelectorAll('.replay-choice');
+
+  let winner = null;
+  let currentWinner = null;
+  let currentRound = 1;
+  let totalRounds = 5;
+  let isGameOver = false;
+  let computerScore = 0;
+  let playerScore = 0;
 
   for (i = 0; i < choiceButtons.length; i++) {
     choiceButtons[i].addEventListener('click', playRound);
   }
 
+  replayChoices.forEach(button => {
+    button.addEventListener('click', replay);
+  });
+
   const choices = ['rock', 'paper', 'scissors'];
-
-  let winner = null;
-  let currentWinner = null;
-
-  let currentRound = 1;
-  let totalRounds = 5;
-  let isGameOver = false;
-
-  let computerScore = 0;
-  let playerScore = 0;
-
 
   function playRound(e) {
     let computerSelection = createComputerPlay(choices);
@@ -40,11 +42,24 @@ function game() {
     isGameOver = checkGameOver(currentRound, totalRounds);
 
     if (isGameOver) {
+      currentRound = 1;
+
       endGame(currentWinner);
 
       roundNumber.textContent = 1;
       updateGameScore(0, 0);
       document.querySelector('.round-results p').textContent = 'Awaiting next play...';
+    }
+  }
+
+  function replay(e) {
+    console.log(e.target.textContent);
+    let userInput = e.target.textContent.toLowerCase();
+
+    if (userInput === 'yes') {
+      game();
+    } else if (userInput === 'no') {
+      console.log('Have a wonderful day!');
     }
   }
 }
@@ -124,11 +139,6 @@ function checkGameOver(currentRound, totalRounds) {
 
 function endGame(currentWinner) {
   let outcome = document.querySelector('.outcome');
-  let choices = document.querySelectorAll('.replay-choice');
-
-  choices.forEach( button => {
-    button.addEventListener('click', replay);
-  });
 
   console.log('Game over!');
 
@@ -140,15 +150,4 @@ function endGame(currentWinner) {
     outcome.textContent = 'It\'s a tie!';
   }
 
-}
-
-function replay(e) {
-  console.log(e.target.textContent);
-  let userInput = e.target.textContent.toLowerCase();
-
-  if (userInput === 'yes') {
-    game();
-  } else if (userInput === 'no') {
-    console.log('Have a wonderful day!');
-  }
 }
