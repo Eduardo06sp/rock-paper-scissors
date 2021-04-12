@@ -120,6 +120,12 @@ function checkGameOver(currentRound, totalRounds) {
 
 function endGame(currentWinner) {
   let outcome = document.querySelector('.outcome');
+  let choices = document.querySelectorAll('.replay-choice');
+
+  choices.forEach( button => {
+    button.addEventListener('click', replay);
+  });
+
   console.log('Game over!');
 
   if (currentWinner === 'player') {
@@ -129,6 +135,12 @@ function endGame(currentWinner) {
   } else {
     outcome.textContent = 'It\'s a tie!';
   }
+
+}
+
+function replay(e) {
+  console.log(e.target.textContent);
+  let userInput = e.target.textContent.toLowerCase();
 
   if (userInput === 'yes') {
     game();
