@@ -39,22 +39,22 @@ function getRoundWinner(playerSelection, computerSelection) {
     playerSelection === 'rock' &&
     computerSelection === 'scissors'
   ) {
-    winner = 'player';
+    return 'player';
   } else if (
     playerSelection === 'paper' &&
     computerSelection === 'rock'
   ) {
-    winner = 'player';
+    return 'player';
   } else if (
     playerSelection === 'scissors' &&
     computerSelection === 'paper'
   ) {
-    winner = 'player';
+    return 'player';
   } else if (
     playerSelection === computerSelection) {
     winner = null;
   } else {
-    winner = 'computer';
+    return 'computer';
   }
 }
 
@@ -66,7 +66,7 @@ function updateScore(computerScore, playerScore) {
   }
 }
 
-function showResults() {
+function showResults(winner) {
   if (winner === 'player') {
     console.log('You won!');
   } else if (winner === 'computer') {
@@ -94,10 +94,9 @@ function playRound(e) {
 
   let computerSelection = createComputerPlay(choices);
   let playerSelection = e.target.textContent.toLowerCase();
-  let winner = null;
 
-  getRoundWinner(playerSelection, computerSelection);
-  showResults();
+  let winner = getRoundWinner(playerSelection, computerSelection);
+  showResults(winner);
 
   updateScore(computerScore, playerScore);
   showGameScore(computerScore, playerScore);
