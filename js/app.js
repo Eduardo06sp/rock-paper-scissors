@@ -25,7 +25,12 @@ function game() {
     winner = getRoundWinner(playerSelection, computerSelection);
     showResults(winner);
 
-    updateScore(computerScore, playerScore);
+    if (winner === 'player') {
+      playerScore++;
+    } else if (winner === 'computer') {
+      computerScore++;
+    }
+
     showGameScore(computerScore, playerScore);
 
     currentRound++;
@@ -74,14 +79,6 @@ function getRoundWinner(playerSelection, computerSelection) {
     winner = null;
   } else {
     return 'computer';
-  }
-}
-
-function updateScore(computerScore, playerScore) {
-  if (winner === 'player') {
-    playerScore++;
-  } else if (winner === 'computer') {
-    computerScore++;
   }
 }
 
