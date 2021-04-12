@@ -78,12 +78,14 @@ function getRoundWinner(playerSelection, computerSelection) {
 }
 
 function showResults(winner) {
+  let roundResults = document.querySelector('.round-results p');
+
   if (winner === 'player') {
-    console.log('You won!');
+    roundResults.textContent = 'You won!';
   } else if (winner === 'computer') {
-    console.log('You lost.');
+    roundResults.textContent = 'You lost.';
   } else {
-    console.log('Tied!');
+    roundResults.textContent = 'Tied!';
   }
 }
 
