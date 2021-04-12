@@ -12,12 +12,9 @@ function game() {
   let totalRounds = 5;
   let isGameOver = false;
 
-  function createRandomNum(max) {
-    return Math.floor(Math.random() * max);
-  }
-
   function createComputerPlay() {
-    computerSelection = choices[createRandomNum(3)];
+    randomNum = Math.floor(Math.random() * 3);
+    computerSelection = choices[randomNum];
   }
 
   function getPlayerSelection() {
