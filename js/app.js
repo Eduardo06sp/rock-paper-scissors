@@ -20,11 +20,6 @@ function game() {
     getPlayerSelection();
 
     playRound(playerSelection, computerSelection);
-    updateScore(computerScore, playerScore);
-    showGameScore(computerScore, playerScore);
-
-    currentRound++;
-    isGameOver = checkGameOver(currentRound, totalRounds);
   }
 
   endGame();
@@ -103,6 +98,12 @@ function playRound(e) {
 
   getRoundWinner(playerSelection, computerSelection);
   showResults();
+
+  updateScore(computerScore, playerScore);
+  showGameScore(computerScore, playerScore);
+
+  currentRound++;
+  isGameOver = checkGameOver(currentRound, totalRounds);
 }
 
 function checkGameOver(currentRound, totalRounds) {
