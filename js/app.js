@@ -40,7 +40,7 @@ function game() {
     isGameOver = checkGameOver(currentRound, totalRounds);
 
     if (isGameOver) {
-      endGame();
+      endGame(currentWinner);
     }
   }
 }
@@ -118,7 +118,7 @@ function checkGameOver(currentRound, totalRounds) {
   }
 }
 
-function endGame() {
+function endGame(currentWinner) {
   console.log('Game over!');
 
   if (currentWinner === 'player') {
