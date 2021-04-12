@@ -6,8 +6,6 @@ for (i = 0; i < choiceButtons.length; i++) {
 
 function game() {
 
-  let computerSelection = '';
-  let playerSelection = '';
   let computerScore = 0;
   let playerScore = 0;
   let winner = null;
@@ -32,8 +30,6 @@ function game() {
   endGame();
 }
 
-game();
-
 function createComputerPlay(choices) {
   randomNum = Math.floor(Math.random() * 3);
   computerSelection = choices[randomNum];
@@ -43,7 +39,7 @@ function getPlayerSelection(e) {
   playerSelection = e.target.textContent.toLowerCase();
 }
 
-function getRoundWinner() {
+function getRoundWinner(playerSelection, computerSelection) {
   if (
     playerSelection === 'rock' &&
     computerSelection === 'scissors'
@@ -100,10 +96,13 @@ function showGameScore(computerScore, playerScore) {
 
 function playRound(e) {
   const choices = ['rock', 'paper', 'scissors'];
-  playerSelection = e.target.textContent.toLowerCase();
+
+  let computerSelection = '';
+  let playerSelection = e.target.textContent.toLowerCase();
+  let winner = null;
 
   createComputerPlay(choices);
-  getRoundWinner();
+  getRoundWinner(playerSelection, computerSelection);
   showResults();
 }
 
