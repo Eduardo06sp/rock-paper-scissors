@@ -13,7 +13,7 @@ function game() {
   let isGameOver = false;
 
   while (!(isGameOver)) {
-    createComputerPlay();
+    createComputerPlay(choices);
     getPlayerSelection();
     playRound(playerSelection, computerSelection);
     checkGameOver();
@@ -24,7 +24,7 @@ function game() {
 
 game();
 
-function createComputerPlay() {
+function createComputerPlay(choices) {
   randomNum = Math.floor(Math.random() * 3);
   computerSelection = choices[randomNum];
 }
