@@ -41,6 +41,10 @@ function game() {
 
     if (isGameOver) {
       endGame(currentWinner);
+
+      roundNumber.textContent = 1;
+      updateGameScore(0, 0);
+      document.querySelector('.round-results p').textContent = 'Awaiting next play...';
     }
   }
 }
