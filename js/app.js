@@ -1,28 +1,11 @@
-const choiceButtons = document.querySelectorAll('.game-choice');
-
-for (i = 0; i < choiceButtons.length; i++) {
-  choiceButtons[i].addEventListener('click', playRound);
-}
-
-function playRound(e) {
-  const choices = ['rock', 'paper', 'scissors'];
-
-  let computerScore = 0;
-  let playerScore = 0;
-  let computerSelection = createComputerPlay(choices);
-  let playerSelection = e.target.textContent.toLowerCase();
-
-  let winner = getRoundWinner(playerSelection, computerSelection);
-  showResults(winner);
-
-  updateScore(computerScore, playerScore);
-  showGameScore(computerScore, playerScore);
-
-  currentRound++;
-  isGameOver = checkGameOver(currentRound, totalRounds);
-}
-
 function game() {
+  const choiceButtons = document.querySelectorAll('.game-choice');
+
+  for (i = 0; i < choiceButtons.length; i++) {
+    choiceButtons[i].addEventListener('click', playRound);
+  }
+
+  const choices = ['rock', 'paper', 'scissors'];
 
   let winner = null;
   let currentWinner = null;
@@ -30,6 +13,24 @@ function game() {
   let currentRound = 1;
   let totalRounds = 5;
   let isGameOver = false;
+
+  let computerScore = 0;
+  let playerScore = 0;
+
+
+  function playRound(e) {
+    let computerSelection = createComputerPlay(choices);
+    let playerSelection = e.target.textContent.toLowerCase();
+
+    winner = getRoundWinner(playerSelection, computerSelection);
+    showResults(winner);
+
+    updateScore(computerScore, playerScore);
+    showGameScore(computerScore, playerScore);
+
+    currentRound++;
+    isGameOver = checkGameOver(currentRound, totalRounds);
+  }
 
   while (false) {
     createComputerPlay(choices);
@@ -40,6 +41,8 @@ function game() {
 
   endGame();
 }
+
+game();
 
 function createComputerPlay(choices) {
   randomNum = Math.floor(Math.random() * 3);
