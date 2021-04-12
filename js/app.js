@@ -1,3 +1,9 @@
+const choiceButtons = document.querySelectorAll('.game-choice');
+
+for (i = 0; i < choiceButtons.length; i++) {
+  choiceButtons[i].addEventListener('click', getPlayerSelection);
+}
+
 function game() {
   const choices = ['rock', 'paper', 'scissors'];
 
@@ -12,7 +18,7 @@ function game() {
   let totalRounds = 5;
   let isGameOver = false;
 
-  while (!(isGameOver)) {
+  while (false) {
     createComputerPlay(choices);
     getPlayerSelection();
 
