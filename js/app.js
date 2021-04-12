@@ -130,15 +130,9 @@ function endGame(currentWinner) {
     outcome.textContent = 'It\'s a tie!';
   }
 
-  let userInput;
-  while (!(userInput === 'yes' || userInput === 'no')) {
-    userInput = prompt(
-      'Would you like to play again? Please type in "yes" or "no"').toLowerCase();
-
-    if (userInput === 'yes') {
-      game();
-    } else if (userInput === 'no') {
-      console.log('Have a wonderful day!');
-    }
+  if (userInput === 'yes') {
+    game();
+  } else if (userInput === 'no') {
+    console.log('Have a wonderful day!');
   }
 }
