@@ -32,7 +32,7 @@ function game() {
 
 function createComputerPlay(choices) {
   randomNum = Math.floor(Math.random() * 3);
-  computerSelection = choices[randomNum];
+  return choices[randomNum];
 }
 
 function getPlayerSelection(e) {
@@ -97,11 +97,10 @@ function showGameScore(computerScore, playerScore) {
 function playRound(e) {
   const choices = ['rock', 'paper', 'scissors'];
 
-  let computerSelection = '';
+  let computerSelection = createComputerPlay(choices);
   let playerSelection = e.target.textContent.toLowerCase();
   let winner = null;
 
-  createComputerPlay(choices);
   getRoundWinner(playerSelection, computerSelection);
   showResults();
 }
