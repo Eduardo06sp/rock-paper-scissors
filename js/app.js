@@ -4,10 +4,26 @@ for (i = 0; i < choiceButtons.length; i++) {
   choiceButtons[i].addEventListener('click', playRound);
 }
 
-function game() {
+function playRound(e) {
+  const choices = ['rock', 'paper', 'scissors'];
 
   let computerScore = 0;
   let playerScore = 0;
+  let computerSelection = createComputerPlay(choices);
+  let playerSelection = e.target.textContent.toLowerCase();
+
+  let winner = getRoundWinner(playerSelection, computerSelection);
+  showResults(winner);
+
+  updateScore(computerScore, playerScore);
+  showGameScore(computerScore, playerScore);
+
+  currentRound++;
+  isGameOver = checkGameOver(currentRound, totalRounds);
+}
+
+function game() {
+
   let winner = null;
   let currentWinner = null;
 
@@ -87,22 +103,6 @@ function showGameScore(computerScore, playerScore) {
     currentWinner = null;
     console.log(`You're both tied at ${playerScore}!`);
   }
-}
-
-function playRound(e) {
-  const choices = ['rock', 'paper', 'scissors'];
-
-  let computerSelection = createComputerPlay(choices);
-  let playerSelection = e.target.textContent.toLowerCase();
-
-  let winner = getRoundWinner(playerSelection, computerSelection);
-  showResults(winner);
-
-  updateScore(computerScore, playerScore);
-  showGameScore(computerScore, playerScore);
-
-  currentRound++;
-  isGameOver = checkGameOver(currentRound, totalRounds);
 }
 
 function checkGameOver(currentRound, totalRounds) {
