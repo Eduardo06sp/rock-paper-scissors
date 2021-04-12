@@ -37,8 +37,8 @@ function game() {
     updateGameScore(computerScore, playerScore);
     currentWinner = checkCurrentWinner(computerScore, playerScore);
 
-    currentRound++;
     roundNumber.textContent = currentRound;
+    currentRound++;
     isGameOver = checkGameOver(currentRound, totalRounds);
 
     if (isGameOver) {
