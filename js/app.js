@@ -1,11 +1,10 @@
 const choiceButtons = document.querySelectorAll('.game-choice');
 
 for (i = 0; i < choiceButtons.length; i++) {
-  choiceButtons[i].addEventListener('click', getPlayerSelection);
+  choiceButtons[i].addEventListener('click', playRound);
 }
 
 function game() {
-  const choices = ['rock', 'paper', 'scissors'];
 
   let computerSelection = '';
   let playerSelection = '';
@@ -99,7 +98,11 @@ function showGameScore(computerScore, playerScore) {
   }
 }
 
-function playRound(playerSelection, computerSelection) {
+function playRound(e) {
+  const choices = ['rock', 'paper', 'scissors'];
+  playerSelection = e.target.textContent.toLowerCase();
+
+  createComputerPlay(choices);
   getRoundWinner();
   showResults();
 }
