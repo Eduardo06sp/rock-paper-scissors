@@ -21,6 +21,7 @@ function game() {
   function playRound(e) {
     let computerSelection = createComputerPlay(choices);
     let playerSelection = e.target.textContent.toLowerCase();
+    let roundNumber = document.querySelector('.number-of-round');
 
     winner = getRoundWinner(playerSelection, computerSelection);
     showResults(winner);
@@ -34,6 +35,7 @@ function game() {
     updateGameScore(computerScore, playerScore);
 
     currentRound++;
+    roundNumber.textContent = currentRound;
     isGameOver = checkGameOver(currentRound, totalRounds);
 
     if (isGameOver) {
