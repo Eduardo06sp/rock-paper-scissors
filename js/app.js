@@ -15,8 +15,13 @@ function game() {
   while (!(isGameOver)) {
     createComputerPlay(choices);
     getPlayerSelection();
+
     playRound(playerSelection, computerSelection);
-    checkGameOver();
+    updateScore(computerScore, playerScore);
+    showGameScore(computerScore, playerScore);
+
+    currentRound++;
+    checkGameOver(currentRound, totalRounds);
   }
 
   endGame();
@@ -63,7 +68,7 @@ function getRoundWinner() {
   }
 }
 
-function updateScore() {
+function updateScore(computerScore, playerScore) {
   if (winner === 'player') {
     playerScore++;
   } else if (winner === 'computer') {
@@ -81,7 +86,7 @@ function showResults() {
   }
 }
 
-function showGameScore() {
+function showGameScore(computerScore, playerScore) {
   if (playerScore > computerScore) {
     currentWinner = 'player';
     console.log(`You are leading ${playerScore}-${computerScore}!`);
@@ -96,14 +101,10 @@ function showGameScore() {
 
 function playRound(playerSelection, computerSelection) {
   getRoundWinner();
-  updateScore();
   showResults();
-  showGameScore();
-
-  currentRound++;
 }
 
-function checkGameOver() {
+function checkGameOver(currentRound, totalRounds) {
   if (currentRound > totalRounds) {
     isGameOver = true;
   } else {
