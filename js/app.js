@@ -23,12 +23,11 @@ function game() {
   function getPlayerSelection() {
     playerSelection = '';
 
-    while (!(
-      playerSelection === choices[0] ||
-      playerSelection === choices[1] ||
-      playerSelection === choices[2])) {
+    do {
       playerSelection = prompt('Choose rock, paper or scissors!').toLowerCase();
-    }
+    } while (!(playerSelection === 'rock' ||
+          playerSelection === 'paper' ||
+          playerSelection === 'scissors'))
   }
 
   function getRoundWinner() {
