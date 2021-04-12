@@ -40,14 +40,8 @@ function createComputerPlay(choices) {
   computerSelection = choices[randomNum];
 }
 
-function getPlayerSelection() {
-  playerSelection = '';
-
-  do {
-    playerSelection = prompt('Choose rock, paper or scissors!').toLowerCase();
-  } while (!(playerSelection === 'rock' ||
-    playerSelection === 'paper' ||
-    playerSelection === 'scissors'))
+function getPlayerSelection(e) {
+  playerSelection = e.target.textContent.toLowerCase();
 }
 
 function getRoundWinner() {
