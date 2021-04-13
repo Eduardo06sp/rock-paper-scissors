@@ -33,6 +33,16 @@ main {
   width: 30%;
 }
 
+.choices {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.choices a {
+  cursor: pointer;
+}
+
 .results {
   display: none;
 }
