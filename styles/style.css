@@ -117,3 +117,33 @@ main {
     width: 85%;
   }
 }
+
+@media screen and (max-width: 560px) {
+  header {
+    font-size: 1rem;
+  }
+
+  main {
+    font-size: 1.3rem;
+  }
+
+  .score {
+    width: 100%;
+  }
+
+  .round-results p {
+    height: 65px;
+  }
+
+  .results-visible {
+    width: 100%;
+  }
+
+  .outcome {
+    font-size: 1.5rem;
+  }
+
+  .credits {
+    font-size: 0.9rem;
+  }
+}
