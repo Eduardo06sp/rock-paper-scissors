@@ -51,6 +51,7 @@ main {
 .choices {
   display: flex;
   justify-content: space-around;
+  max-width: 610px;
   width: 100%;
 }
 
