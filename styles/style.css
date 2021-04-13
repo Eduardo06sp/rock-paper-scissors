@@ -106,3 +106,14 @@ main {
   flex-direction: column;
   height: 10%;
 }
+
+@media screen and (max-width: 900px) {
+  .score {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .choices {
+    width: 85%;
+  }
+}
