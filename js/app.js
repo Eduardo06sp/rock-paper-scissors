@@ -22,7 +22,7 @@ function game() {
 
   function playRound(e) {
     let computerSelection = createComputerPlay(choices);
-    let playerSelection = e.target.textContent.toLowerCase();
+    let playerSelection = e.target.parentNode.classList[1];
     let roundNumber = document.querySelector('.number-of-round');
 
     winner = getRoundWinner(playerSelection, computerSelection);
