@@ -59,10 +59,10 @@ function game() {
       roundNumber.textContent = 1;
       updateGameScore(0, 0);
       document.querySelector('.round-results p').textContent = 'Awaiting next play...';
+      endGameModal.classList.remove('results-visible');
     } else if (userInput === 'no') {
+      document.querySelector('.outcome').textContent = 'Have a wonderful day!';
     }
-
-    endGameModal.classList.remove('results-visible');
   }
 }
 
