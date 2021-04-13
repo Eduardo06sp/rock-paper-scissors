@@ -7,8 +7,13 @@ html, body {
   height: 100%;
 }
 
+body {
+  font-family: 'JostLight', sans-serif;
+}
+
 header {
   align-items: center;
+  font-family: 'JostBlack', sans-serif;
   justify-content: center;
   display: flex;
   height: 20%;
