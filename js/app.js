@@ -143,11 +143,11 @@ function endGame(currentWinner) {
   let outcome = document.querySelector('.outcome');
 
   if (currentWinner === 'player') {
-    outcome.textContent = 'Congratulations! You win the match!';
+    outcome.innerText = 'Congratulations!\nYou win the match!';
   } else if (currentWinner === 'computer') {
-    outcome.textContent = 'Better luck next time! You lost this match.';
+    outcome.innerText = 'Better luck next time!\nYou lost this match.';
   } else {
-    outcome.textContent = 'It\'s a tie!';
+    outcome.innerText = 'It\'s a tie!';
   }
 
 }
