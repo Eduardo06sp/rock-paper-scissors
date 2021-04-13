@@ -47,16 +47,17 @@ function game() {
       computerScore = 0;
       playerScore = 0;
       currentRound = 1;
-      roundNumber.textContent = 1;
-      updateGameScore(0, 0);
-      document.querySelector('.round-results p').textContent = 'Awaiting next play...';
     }
   }
 
   function replay(e) {
     let userInput = e.target.textContent.toLowerCase();
+    let roundNumber = document.querySelector('.number-of-round');
 
     if (userInput === 'yes') {
+      roundNumber.textContent = 1;
+      updateGameScore(0, 0);
+      document.querySelector('.round-results p').textContent = 'Awaiting next play...';
     } else if (userInput === 'no') {
     }
   }
