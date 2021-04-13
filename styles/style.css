@@ -30,12 +30,16 @@ main {
   font-size: 1.5rem;
   height: 80%;
   margin: 0 auto;
-  padding-top: 1%;
+  max-width: 945px;
   width: 80%;
 }
 
 .round, .score, .round-results {
   padding-bottom: 15px;
+}
+
+.round p {
+  margin-top: 10px;
 }
 
 .score {
