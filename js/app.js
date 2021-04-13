@@ -6,7 +6,6 @@ function game() {
   let winner = null;
   let currentWinner = null;
   let currentRound = 1;
-  let totalRounds = 5;
   let isGameOver = false;
   let computerScore = 0;
   let playerScore = 0;
@@ -40,7 +39,7 @@ function game() {
 
     roundNumber.textContent = currentRound;
     currentRound++;
-    isGameOver = checkGameOver(currentRound, totalRounds);
+    isGameOver = checkGameOver(computerScore, playerScore);
 
     if (isGameOver) {
       endGameModal.classList.add('results-visible');
@@ -132,8 +131,8 @@ function checkCurrentWinner(computerScore, playerScore) {
   }
 }
 
-function checkGameOver(currentRound, totalRounds) {
-  if (currentRound > totalRounds) {
+function checkGameOver(computerScore, playerScore) {
+  if (computerScore === 5 || playerScore === 5) {
     return true;
   } else {
     return false;
