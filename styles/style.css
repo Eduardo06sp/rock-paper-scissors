@@ -30,6 +30,7 @@ main {
   font-size: 1.5rem;
   height: 80%;
   margin: 0 auto;
+  padding-top: 1%;
   width: 80%;
 }
 
@@ -55,11 +56,12 @@ main {
 
 .results {
   display: none;
+  text-align: center;
 }
 
 .results-visible {
   align-items: center;
-  background-color: #9FD8CBDB;
+  background-color: #9FD8CBD9;
   display: flex;
   flex-direction: column;
   height: 60%;
@@ -69,7 +71,10 @@ main {
 }
 
 .outcome {
+  align-items: center;
   font-size: 2rem;
+  display: flex;
+  height: 120px;
 }
 
 .outcome, .results-visible p {
@@ -79,7 +84,16 @@ main {
 .results-visible .replay-choices {
   display: flex;
   justify-content: space-around;
-  width: 40%;
+  width: 60%;
+}
+
+.replay-choice {
+  background-color: #FDE8E9;
+  border: 1px lightgray solid;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  height: 50px;
+  width: 100px;
 }
 
 .credits {
