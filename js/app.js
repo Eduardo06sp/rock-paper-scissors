@@ -26,7 +26,7 @@ function game() {
     let roundNumber = document.querySelector('.number-of-round');
 
     winner = getRoundWinner(playerSelection, computerSelection);
-    showResults(winner);
+    showResults(playerSelection, computerSelection, winner);
 
     if (winner === 'player') {
       playerScore++;
@@ -101,15 +101,15 @@ function getRoundWinner(playerSelection, computerSelection) {
   }
 }
 
-function showResults(winner) {
+function showResults(playerSelection, computerSelection, winner) {
   let roundResults = document.querySelector('.round-results p');
 
   if (winner === 'player') {
-    roundResults.textContent = 'You won!';
+    roundResults.textContent = `Computer chose ${computerSelection}. You won!`;
   } else if (winner === 'computer') {
-    roundResults.textContent = 'You lost.';
+    roundResults.textContent = `Computer chose ${computerSelection}. You lost!`;
   } else {
-    roundResults.textContent = 'Tied!';
+    roundResults.textContent = `Computer made the same selection. Tie!`;
   }
 }
 
