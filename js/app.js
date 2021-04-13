@@ -1,6 +1,7 @@
 function game() {
   const choiceButtons = document.querySelectorAll('.game-choice');
   const replayChoices = document.querySelectorAll('.replay-choice');
+  const endGameModal = document.querySelector('.results');
 
   let winner = null;
   let currentWinner = null;
@@ -42,6 +43,7 @@ function game() {
     isGameOver = checkGameOver(currentRound, totalRounds);
 
     if (isGameOver) {
+      endGameModal.classList.add('results-visible');
       endGame(currentWinner);
 
       computerScore = 0;
@@ -60,6 +62,8 @@ function game() {
       document.querySelector('.round-results p').textContent = 'Awaiting next play...';
     } else if (userInput === 'no') {
     }
+
+    endGameModal.classList.remove('results-visible');
   }
 }
 
